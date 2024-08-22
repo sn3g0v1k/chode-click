@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Page</title>
+    <style>
+        body {
+            background-color: aliceblue;
+        }
+        h6 {
+            text-align: center;
+        }
+    </style>
+
+
+</head>
+<body>
+{%if warning%}
+<h6>{{warning}}</h6>
+{%endif%}
+<h1>{{score}}</h1>
+<form method="post">
+    <button type="submit" class="btn btn-primary" name="boosting">
+        {{boost}}
+        <br/>
+        {{cost}}
+    </button>
+</form>
+<form method="post">
+    <button type="submit" name="back">Back</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Page</title>
+
+</head>
+<body>
+
+{%if blocks%}
+{%for block in blocks%}
+<div class="block">
+<h3>{{block.text}}</h3>
+<h2>{{block.reward}}</h2>
+<form method="post">
+    <input type="hidden" value={{block.id}} name="id">
+    <button type="submit" name="Task">
+        You got it
+    </button>
+</form>
+</div>
+{%endfor%}
+{%endif%}
+</body>
+</html>

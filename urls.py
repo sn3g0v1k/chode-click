@@ -1,0 +1,1 @@
+symbol_url = "https://upload.wikimedia.org/wikipedia/ru/6/69/Monarchist_party_RF_logo.png"

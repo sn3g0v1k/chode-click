@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: rgb(204, 204, 204);
+            color: rgb(112, 112, 112);
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            padding: 10px;
+        }
+
+        .header img {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+        }
+
+        .header div {
+            text-align: right;
+        }
+
+        .header .name {
+            font-size: 20px;
+            background-color: blue;
+        }
+
+        .header .score {
+            font-size: 16px;
+        }
+
+        .main-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 150px;
+            height: 150px;
+            background: url('/static/button_image.png') no-repeat center center / contain;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.1s ease-in-out; /* Smooth transition for click animation */
+            position: relative;
+            outline: none;
+        }
+
+        .main-button:active {
+            transform: scale(0.9); /* Scale down the button when clicked */
+        }
+
+        .floating-digit {
+            position: absolute;
+            font-size: 24px;
+            font-weight: bold;
+            color: #FFD700; /* Gold color */
+            animation: floatUp 1.5s ease-in-out forwards; /* Animation for floating up and fading out */
+        }
+
+        @keyframes floatUp {
+            0% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-100px);
+            }
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            padding: 10px 0;
+        }
+
+        .footer button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        .footer button img {
+            width: 60px;
+            height: 60px;
+        }
+        .floating-digit {
+            position: absolute;
+            font-size: 24px;
+            font-weight: bold;
+            color: #FFD700; /* Gold color */
+            animation: floatUp 1.5s ease-in-out forwards;
+        }
+
+        @keyframes floatUp {
+            0% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-100px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <img src="{{ user_picture }}" alt="User Picture">
+    <div>
+        <div class="name">{{ user_name }}</div>
+        <div class="score">⚡ <span id="score-display">{{ score }}</span></div>
+    </div>
+</div>
+
+<form id="click-form" method="post">
+    <button type="submit" name="click" class="main-button">
+        <img src="https://upload.wikimedia.org/wikipedia/ru/6/69/Monarchist_party_RF_logo.png" alt="Main">
+    </button>
+</form>
+
+<div class="footer">
+    <button type="button">
+        <img src="https://cdn-icons-png.flaticon.com/512/4862/4862339.png" alt="Airdrop">
+    </button>
+
+
+    <form method="post">
+        <button type="submit" name="Earn">
+            <img src="https://cdn-icons-png.flaticon.com/512/10217/10217199.png" alt="Earn">
+        </button>
+    </form>
+    
+
+    <form method="post">
+        <button type="submit" name="improve">
+            <img src="https://cdn-icons-png.flaticon.com/512/157/157410.png" alt="Boost">
+        </button>
+    </form>
+</div>
+
+
+
+
+</body>
+</html>
